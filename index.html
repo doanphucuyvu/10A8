@@ -2,7 +2,7 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, shrink-to-fit=no, viewport-fit=cover" />
   <title>Lớp 10A8 | The Official Website</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,30 +11,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
-
-  <script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyBXtq0ys5YYm8fW8kDQQ1BmvkWPydsBHpU",
-    authDomain: "a8-68ed9.firebaseapp.com",
-    projectId: "a8-68ed9",
-    storageBucket: "a8-68ed9.firebasestorage.app",
-    messagingSenderId: "1040601150712",
-    appId: "1:1040601150712:web:2cda57272b98f71770770d",
-    measurementId: "G-TR74MW2LJC"
-  };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-</script>
 
   <style>
     /* ============================================
@@ -217,6 +193,7 @@
 
     @media (max-width: 768px) {
         .cursor-dot, .cursor-outline { display: none; }
+        body { cursor: auto; }
     }
 
     /* ============================================
@@ -1868,23 +1845,23 @@
       <h2 class="editable" data-key="statsTitle">Tổng quan lớp học</h2>
       <div class="bento-grid">
         <div class="bento-card large tilt-card">
-          <h3 class="editable" data-key="totalStudents">45</h3>
+          <h3 class="editable" data-key="totalStudents">42</h3>
           <p class="editable" data-key="totalStudentsText">Thành viên ưu tú</p>
         </div>
         <div class="bento-card tilt-card">
-          <strong class="editable" data-key="maleCount" style="color: #60a5fa">23</strong>
+          <strong class="editable" data-key="maleCount" style="color: #60a5fa">29</strong>
           <span class="editable" data-key="maleText">Nam</span>
         </div>
         <div class="bento-card tilt-card">
-          <strong class="editable" data-key="femaleCount" style="color: #ec4899">22</strong>
+          <strong class="editable" data-key="femaleCount" style="color: #ec4899">13</strong>
           <span class="editable" data-key="femaleText">Nữ</span>
         </div>
         <div class="bento-card medium tilt-card" style="background: linear-gradient(135deg, #10b981, #3b82f6); color: white;">
           <i class="fa-solid fa-graduation-cap" style="font-size: 2.5rem; margin-bottom: 10px;"></i>
-          <span class="editable" data-key="teacherName">GVCN: Cô Nguyễn Thị Mẫu</span>
+          <span class="editable" data-key="teacherName">GVCN: Thầy Nguyễn Bá Huy</span>
         </div>
         <div class="bento-card tilt-card">
-          <strong class="editable" data-key="ranking">Top 1</strong>
+          <strong class="editable" data-key="ranking">Top 9</strong>
           <span class="editable" data-key="rankingText">Thi đua tuần</span>
         </div>
         <div class="bento-card tilt-card">
@@ -1894,7 +1871,6 @@
       </div>
     </section>
 
-    <!-- BIRTHDAY SECTION - TÍNH NĂNG MỚI -->
     <section id="birthday" class="hidden">
       <h2>🎉 Sinh nhật thành viên</h2>
       <div class="birthday-section tilt-card">
@@ -1917,7 +1893,7 @@
         <h2 class="editable" data-key="studentsTitle">Danh sách thành viên</h2>
         <div class="student-list-container tilt-card">
             <ul class="students" id="studentList">
-              <!-- Student list will be populated from JavaScript -->
+        
             </ul>
         </div>
     </section>
@@ -1930,7 +1906,7 @@
             <tr>
               <th class="editable" data-key="dayColumn">Thứ</th>
               <th class="editable" data-key="morningColumn">Sáng (Tiết 1-5)</th>
-              <th class="editable" data-key="afternoonColumn">Chiều (Tiết 6-9)</th>
+              <th class="editable" data-key="afternoonColumn">Chiều (Tiết 1-5)</th>
               <th class="editable" data-key="noteColumn">Ghi chú</th>
             </tr>
           </thead>
@@ -1958,7 +1934,7 @@
   </main>
 
   <footer>
-    <p class="editable" data-key="footerText">© 2025 Lớp 10A8 • Designed for Gen Z</p>
+    <p class="editable" data-key="footerText">© 2025 Lớp 10A8 • Designed for 10A8</p>
   </footer>
 
   <!-- Student Profile Modal -->
@@ -2095,27 +2071,73 @@
     // ============================================
     // 1. ADMIN CONFIGURATION & GLOBAL VARIABLES
     // ============================================
-    const ADMIN_PASSWORD = "admin123";
+    const ADMIN_PASSWORD = "Niggerhaha10a8";
     let isAdminLoggedIn = false;
     let isEditMode = false;
     let currentStudentKey = null;
 
     // ============================================
-    // 2. DỮ LIỆU LƯU TRỮ - THÊM BIRTHDAY DATA
+    // 2. DỮ LIỆU HỌC SINH 
     // ============================================
+    const studentsFromImage = [
+      { name: "Bùi Nhật Minh", birthday: "29/07" },
+      { name: "Bùi Trung Kiên", birthday: "22/04" },
+      { name: "Đinh Quang Trường", birthday: "22/04" },
+      { name: "Đoàn Phúc Uy Vũ", birthday: "25/02" },
+      { name: "Đoàn Trần Như Ngọc", birthday: "01/01" },
+      { name: "Đặng Ngọc Duy", birthday: "24/01" },
+      { name: "Hoàng Đức Gia Huy", birthday: "08/06" },
+      { name: "Hoàng Gia Khánh", birthday: "06/07" },
+      { name: "Hoàng Minh Sơn", birthday: "01/07" },
+      { name: "Hoàng Tuệ Vy", birthday: "23/02" },
+      { name: "Lê Bảo Nam", birthday: "28/04" },
+      { name: "Lê Đức Tùng", birthday: "02/02" },
+      { name: "Lê Hà Anh", birthday: "09/04" },
+      { name: "Lê Hoàng Linh", birthday: "11/12" },
+      { name: "Lê Nhật Minh", birthday: "16/12" },
+      { name: "Lê Phương Thảo", birthday: "17/04" },
+      { name: "Lý Khánh Linh", birthday: "30/07" },
+      { name: "Ngô Nam Phong", birthday: "06/11" },
+      { name: "Nguyễn Công Thiện Vũ", birthday: "03/11" },
+      { name: "Nguyễn Gia Bình", birthday: "10/01" },
+      { name: "Nguyễn Gia Hiếu", birthday: "28/08" },
+      { name: "Nguyễn Minh Quân", birthday: "15/07" },
+      { name: "Nguyễn Ngọc Nhi", birthday: "17/04" },
+      { name: "Nguyễn Ngọc Trang", birthday: "29/08" },
+      { name: "Nguyễn Quỳnh Anh", birthday: "06/03" },
+      { name: "Nguyễn Thị Hoài Anh", birthday: "25/04" },
+      { name: "Nguyễn Tống Lâm", birthday: "13/01" },
+      { name: "Nguyễn Tuấn Anh", birthday: "03/05" },
+      { name: "Nguyễn Văn Bách Tòng", birthday: "16/07" },
+      { name: "Nguyễn Viết Tài", birthday: "05/05" },
+      { name: "Phạm Bảo Phong", birthday: "04/04" },
+      { name: "Phạm Hải Anh", birthday: "20/10" },
+      { name: "Phạm Khánh Nguyên", birthday: "09/10" },
+      { name: "Phạm Ngọc Tuyết Nhi", birthday: "28/06" },
+      { name: "Phạm Trung Hiếu", birthday: "05/10" },
+      { name: "Phùng Đức Tuấn", birthday: "30/09" },
+      { name: "Phùng Nhật Minh", birthday: "27/10" },
+      { name: "Tạ Gia Minh", birthday: "09/07" },
+      { name: "Trần Ka Ka", birthday: "16/01" },
+      { name: "Trần Quang Minh", birthday: "03/12" },
+      { name: "Trương Khánh An", birthday: "30/01" },
+      { name: "Từ Hồng Minh", birthday: "23/03" }
+    ];
+
+    let sortedStudentKeys = [];
     let appData = {
       editableTexts: {
         welcomeText: "Chào mừng đến với vũ trụ",
         className: "10A8",
         statsTitle: "Tổng quan lớp học",
-        totalStudents: "45",
+        totalStudents: "42",
         totalStudentsText: "Thành viên ưu tú",
-        maleCount: "23",
+        maleCount: "29",
         maleText: "Nam",
-        femaleCount: "22",
+        femaleCount: "13",
         femaleText: "Nữ",
-        teacherName: "GVCN: Cô Nguyễn Thị Mẫu",
-        ranking: "Top 1",
+        teacherName: "GVCN: Thầy Nguyễn Bá Huy",
+        ranking: "Top 9",
         rankingText: "Thi đua tuần",
         unity: "100%",
         unityText: "Đoàn kết",
@@ -2127,103 +2149,46 @@
         noteColumn: "Ghi chú",
         wallTitle: "Bức tường lưu bút",
         wallDescription: "Dán một tờ giấy nhớ để đánh dấu bạn đã ghé qua nhé!",
-        footerText: "© 2025 Lớp 10A8 • Designed for Gen Z"
+        footerText: "© 2025 Lớp 10A8 • Designed for 10A8"
       },
       
-      studentData: {
-        'Nguyen_Van_A': {
-          name: 'Nguyễn Văn A', 
-          nickname: 'A Đẹp Trai',
-          avatar: 'https://i.pravatar.cc/150?u=a', 
-          position: 'Lớp Trưởng',
-          hobbies: 'Chơi game Valorant, Thể thao', 
-          achievements: 'Giải Nhất Olympic Toán',
-          quote: 'Nếu không thử, bạn sẽ không bao giờ biết.',
-          birthday: '15/12'
-        },
-        'Tran_Thi_B': {
-          name: 'Trần Thị B', 
-          nickname: 'Bánh Bèo B',
-          avatar: 'https://i.pravatar.cc/150?u=b', 
-          position: 'Ủy viên Văn Thể Mỹ',
-          hobbies: 'Vẽ tranh, xem phim Hàn Quốc', 
-          achievements: 'Học sinh Giỏi toàn diện',
-          quote: 'Mỗi ngày là một món quà, hãy mở nó ra!',
-          birthday: '20/12'
-        },
-        'Le_Van_C': {
-          name: 'Lê Văn C', 
-          nickname: 'C Lạnh Lùng',
-          avatar: 'https://i.pravatar.cc/150?u=c', 
-          position: 'Tổ Trưởng Tổ 2',
-          hobbies: 'Đọc sách khoa học, leo núi', 
-          achievements: 'Giải Ba Hóa học cấp trường',
-          quote: 'Kiên trì là chìa khóa của thành công.',
-          birthday: '05/01'
-        },
-        'Pham_Thi_D': {
-          name: 'Phạm Thị D', 
-          nickname: 'D Diva',
-          avatar: 'https://i.pravatar.cc/150?u=d', 
-          position: 'Thủ quỹ',
-          hobbies: 'Nhảy múa, Ca hát', 
-          achievements: 'Giải Nhất cuộc thi Văn nghệ',
-          quote: 'Hãy tỏa sáng theo cách của riêng bạn.',
-          birthday: '25/12'
-        },
-        'Hoang_Van_E': {
-          name: 'Hoàng Văn E', 
-          nickname: 'E Thể Thao',
-          avatar: 'https://i.pravatar.cc/150?u=e', 
-          position: 'Ủy viên Thể dục',
-          hobbies: 'Bóng đá, Bơi lội', 
-          achievements: 'HCV cấp thành phố',
-          quote: 'Không có gì là không thể!',
-          birthday: '10/01'
-        }
-      },
+      studentData: {},
       
       scheduleData: [
-        { day: 'Thứ 2', morning: 'Chào cờ, Toán, Toán, Lý, Anh', afternoon: 'Nghỉ', note: 'Áo dài/Đồng phục' },
-        { day: 'Thứ 3', morning: 'Văn, Văn, Sử, Địa, GDCD', afternoon: 'Thể dục, QP', note: '' },
-        { day: 'Thứ 4', morning: 'Hóa, Hóa, Sinh, Tin, CN', afternoon: 'Nghỉ', note: '' },
-        { day: 'Thứ 5', morning: 'Toán, Lý, Lý, Anh, Anh', afternoon: 'HĐTN', note: '' },
-        { day: 'Thứ 6', morning: 'Văn, Sử, Địa, SHCN', afternoon: 'Nghỉ', note: 'Trực nhật tổ 3' },
-        { day: 'Thứ 7', morning: 'Toán, Văn', afternoon: 'Nghỉ', note: '' }
+        { day: 'Thứ 2', morning: 'HĐTN, Toán, Văn, Văn, Hoá', afternoon: '', note: '' },
+        { day: 'Thứ 3', morning: 'Anh, Anh, Văn, Toán, Toán', afternoon: '', note: '' },
+        { day: 'Thứ 4', morning: 'Lý, Lý, GDQP, Sử, Sử', afternoon: 'Tin, Tin, Thể dục, Thể dục', note: '' },
+        { day: 'Thứ 5', morning: 'Anh, Hoá, Hoá, Lý', afternoon: '', note: 'Tiết 5 trống' },
+        { day: 'Thứ 6', morning: 'Nhạc, Nhạc, GDĐP, Toán, HĐTN', afternoon: '', note: '' },
+        { day: 'Thứ 7', morning: '', afternoon: '', note: 'Nghỉ' }
       ],
       
       stickyNotes: [
-        { 
-          id: 1, 
-          text: 'Hello 10A8! <br> Mãi keo!', 
-          author: 'An', 
-          color: '#ff9', 
-          rotation: -3,
-          timestamp: new Date().toISOString(),
-          status: 'active'
-        },
-        { 
-          id: 2, 
-          text: 'Chúc lớp mình năm nay học giỏi nha ❤️', 
-          author: 'Bình', 
-          color: '#caf0f8', 
-          rotation: 2,
-          timestamp: new Date(Date.now() - 86400000).toISOString(),
-          status: 'active'
-        },
-        { 
-          id: 3, 
-          text: 'Hôm nay trực nhật mệt quá :(', 
-          author: 'Cường', 
-          color: '#ffcad4', 
-          rotation: -1,
-          timestamp: new Date(Date.now() - 172800000).toISOString(),
-          status: 'active'
-        }
+        { id: 1, text: 'Tính năng đang được phát triển', author: 'Uy Vũ', color: '#ff9', rotation: -3, timestamp: new Date().toISOString(), status: 'active' },
       ],
       
       colors: ['#ff9', '#caf0f8', '#ffcad4', '#e2f0cb', '#e0c3fc']
     };
+
+    // Khởi tạo studentData và danh sách thứ tự
+    (function buildStudentData() {
+      appData.studentData = {};
+      sortedStudentKeys = [];
+      studentsFromImage.forEach((s, idx) => {
+        let key = 'sv_' + (idx + 1);
+        appData.studentData[key] = {
+          name: s.name,
+          nickname: '',
+          avatar: 'https://i.pravatar.cc/150?u=' + key,
+          position: 'Thành viên',
+          hobbies: 'Chưa cập nhật',
+          achievements: 'Chưa có',
+          quote: 'Hãy viết điều gì đó truyền cảm hứng!',
+          birthday: s.birthday
+        };
+        sortedStudentKeys.push(key);
+      });
+    })();
 
     // ============================================
     // 3. KHỞI TẠO ỨNG DỤNG
@@ -2251,7 +2216,7 @@
     });
 
     // ============================================
-    // 4. HỆ THỐNG SINH NHẬT MỚI
+    // 4. HỆ THỐNG SINH NHẬT
     // ============================================
     function initBirthdaySection() {
       const birthdayContainer = document.getElementById('birthdayContainer');
@@ -2265,7 +2230,7 @@
       
       let birthdayStudents = [];
       
-      Object.keys(appData.studentData).forEach(key => {
+      sortedStudentKeys.forEach(key => {
         const student = appData.studentData[key];
         if (student.birthday) {
           const [day, month] = student.birthday.split('/').map(Number);
@@ -2386,7 +2351,7 @@
       const managerList = document.getElementById('birthdayManagerList');
       managerList.innerHTML = '';
       
-      Object.keys(appData.studentData).forEach(key => {
+      sortedStudentKeys.forEach(key => {
         const student = appData.studentData[key];
         const div = document.createElement('div');
         div.style.padding = '15px';
@@ -2399,7 +2364,7 @@
         
         div.innerHTML = `
           <div style="flex-grow: 1;">
-            <strong>${student.name}</strong> (@${student.nickname})<br>
+            <strong>${student.name}</strong> (@${student.nickname || '...'})<br>
             <small style="color: var(--text-light);">${student.position}</small>
           </div>
           <div style="display: flex; align-items: center; gap: 10px;">
@@ -2451,7 +2416,7 @@
       const currentDate = today.getDate();
       
       let birthdayToday = [];
-      Object.keys(appData.studentData).forEach(key => {
+      sortedStudentKeys.forEach(key => {
         const student = appData.studentData[key];
         if (student.birthday) {
           const [day, month] = student.birthday.split('/').map(Number);
@@ -2547,7 +2512,7 @@
       const studentList = document.getElementById('studentList');
       studentList.innerHTML = '';
       
-      Object.keys(appData.studentData).forEach(key => {
+      sortedStudentKeys.forEach(key => {
         const student = appData.studentData[key];
         const li = document.createElement('li');
         li.textContent = student.name;
@@ -2885,7 +2850,7 @@
       const managerList = document.getElementById('studentManagerList');
       managerList.innerHTML = '';
       
-      Object.keys(appData.studentData).forEach(key => {
+      sortedStudentKeys.forEach(key => {
         const student = appData.studentData[key];
         const div = document.createElement('div');
         div.style.padding = '15px';
